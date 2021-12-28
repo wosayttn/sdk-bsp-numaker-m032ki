@@ -2,7 +2,7 @@ board:
   buy_url_cn: https://direct.nuvoton.com/tw/numaker-m032ki
   buy_url_global: https://direct.nuvoton.com/tw/numaker-m032ki
   debug_interface: SWD
-  debugger: DAP-LINK
+  debugger: NU-LINK
   description_en: The NUMAKER-M032KI development board consists of two parts,
     a M032KIAAE platform and an on-board Nu-Link2-Me debugger and programmer.
     The NUMAKER-M032KI allows users to quickly develop and easily program and
