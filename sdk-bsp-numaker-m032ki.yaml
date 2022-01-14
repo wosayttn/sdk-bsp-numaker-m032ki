@@ -62,7 +62,6 @@ template_projects:
     - applications
     - makefile.targets
     - board
-    - packages
     - README.md
     - cconfig.h
     - rtconfig.h

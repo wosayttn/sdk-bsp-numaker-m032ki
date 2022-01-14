@@ -13,6 +13,7 @@
 #define RT_TICK_PER_SECOND 1000
 #define RT_USING_OVERFLOW_CHECK
 #define RT_USING_HOOK
+#define RT_HOOK_USING_FUNC_PTR
 #define RT_USING_IDLE_HOOK
 #define RT_IDLE_HOOK_LIST_SIZE 4
 #define IDLE_THREAD_STACK_SIZE 512
@@ -36,6 +37,7 @@
 
 #define RT_USING_MEMPOOL
 #define RT_USING_SMALL_MEM
+#define RT_USING_SMALL_MEM_AS_HEAP
 #define RT_USING_HEAP
 
 /* Kernel Device Object */
@@ -44,7 +46,7 @@
 #define RT_USING_CONSOLE
 #define RT_CONSOLEBUF_SIZE 256
 #define RT_CONSOLE_DEVICE_NAME "uart0"
-#define RT_VER_NUM 0x40004
+#define RT_VER_NUM 0x40100
 #define ARCH_ARM
 #define ARCH_ARM_CORTEX_M
 #define ARCH_ARM_CORTEX_M0
@@ -78,6 +80,7 @@
 /* Device virtual file system */
 
 #define RT_USING_DFS
+#define DFS_USING_POSIX
 #define DFS_USING_WORKDIR
 #define DFS_FILESYSTEMS_MAX 2
 #define DFS_FILESYSTEM_TYPES_MAX 2
@@ -87,7 +90,6 @@
 /* Device Drivers */
 
 #define RT_USING_DEVICE_IPC
-#define RT_PIPE_BUFSZ 512
 #define RT_USING_SERIAL
 #define RT_USING_SERIAL_V1
 #define RT_SERIAL_USING_DMA
@@ -97,6 +99,7 @@
 #define RT_USING_ADC
 #define RT_USING_PWM
 #define RT_USING_PM
+#define PM_TICKLESS_THRESHOLD_TIME 2
 #define RT_USING_RTC
 #define RT_USING_WDT
 
@@ -114,10 +117,15 @@
 
 /* POSIX layer and C standard library */
 
-#define RT_USING_LIBC
-#define RT_LIBC_USING_TIME
 #define RT_LIBC_DEFAULT_TIMEZONE 8
-#define RT_USING_POSIX
+
+/* POSIX (Portable Operating System Interface) layer */
+
+
+/* Interprocess Communication (IPC) */
+
+
+/* Socket is in the 'Network' category */
 
 /* Network */
 
@@ -143,6 +151,18 @@
 #define UTEST_THR_PRIORITY 20
 
 /* RT-Thread Utestcases */
+
+#define RT_USING_UTESTCASES
+
+/* Utest Self Testcase */
+
+#define UTEST_SELF_PASS_TC
+
+/* Kernel Testcase */
+
+#define UTEST_SMALL_MEM_TC
+
+/* Utest Serial Testcase */
 
 
 /* RT-Thread online packages */
@@ -183,7 +203,10 @@
 
 /* system packages */
 
-/* rt_kprintf: enhanced rt_kprintf packages */
+/* enhanced kernel services */
+
+
+/* POSIX extension functions */
 
 
 /* acceleration: Assembly language or algorithmic acceleration packages */
@@ -259,5 +282,7 @@
 
 /* Board extended module drivers */
 
+#define BOARD_USE_UTEST
+#define UTEST_CMD_PREFIX "bsp.nuvoton.numaker-m032ki.test.utest."
 
 #endif
